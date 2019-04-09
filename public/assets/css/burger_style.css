@@ -1,0 +1,22 @@
+
+  img{
+    margin-top:30px;
+    
+  }
+  
+  button{ float: right; }
+  
+  .container{margin-bottom:50px;}
+  
+  form{ display: inline; }
+  
+  #eaten{color:lightgrey;}
+  
+  body{ background-color: #E6E6E6 }
+  
+  h1 {font-family: 'Indie Flower', cursive;
+    font-size: 60px;
+    color: blueviolet;}
+  
+  body {font-family: 'Lato', sans-serif;
+    font-size: 20px}

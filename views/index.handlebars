@@ -1,0 +1,60 @@
+<img src="/assets/img/burgerPic.jpg" class="img-responsive center-block" alt="burger">
+</img>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center"><span class="fa fa-fire"></span> Create and Eat your Mexican Burger</h1>
+        <hr>
+
+        <div class="col-sm-12">
+
+            <div class="col-sm-6">
+
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+ 
+                    <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                    <button type="submit" class="btn btn-success" id = "eatbutton" 
+                     data-id="{{this.id}}" data-newDevoured = "{{devour}}">Eat me!</button>
+                    <span class="fa fa-cutlery"></span></button>
+                    <hr>
+
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="col-sm-6">
+                <ul>
+
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <div class="show" id="eaten" <p>
+                        <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                        </p>
+                    </div>
+
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <form action="/" method="POST">
+                    <div class="form-request">
+                        <label for="input">Your Mexican Burger</label>
+                        <textarea type="text" class="form-control" name="input"
+                            placeholder="write here the name of your new burger"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+</div>
