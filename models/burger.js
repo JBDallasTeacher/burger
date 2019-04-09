@@ -11,16 +11,15 @@ var burger = {
 
     //******************** The variables cols and vals are arrays.*********************************//
     create: function (input, cb) {
-        orm.create("burgers", input, function (res) {
-            cb(res);
-        })
+        orm.create("burgers", ["burger_name", "devoured"], [input, false], cb)
     },
+
     //********************************************************************************************// 
-    update: function (objColVals, input, condition, cb) {
-        orm.update("burgers", objColVals, input, condition, function (res) {
-            cb(res);
-        });
+    update: function (input, cb) {
+        var condition = "id=" + input;
+        orm.update("burgers", { devoured: true }, condition, cb)
     },
+
     //********************************************************************************************//  
 
 };

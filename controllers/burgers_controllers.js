@@ -17,8 +17,9 @@ router.get("/", function (req, res) {
 });
 //********************************************************************************************* */
 router.post("/", function (req, res) {
-    console.log(req.body.input);
-    burger.create(req.body.input, function () {
+    console.log(req.body.burger_name);
+    burger.create(req.body.burger_name, function (respond) {
+        console.log(respond);
         res.redirect("/");
     })
 });
@@ -29,8 +30,9 @@ router.put("/:id", function (req, res) {
 
     console.log(id);
 
-    burger.update("devoured", true, id, function(){
-        res.redirect("/");
+    burger.update(id, function (respond) {
+        console.log(respond);
+        res.status(200);
     })
 });
 //********************************************************************************************* */

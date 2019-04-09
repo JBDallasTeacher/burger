@@ -22,7 +22,7 @@ $(function () {
         );
     });
 
-    $(".eatthisburger").on("click", function (event) {
+    $(".eatbutton").on("click", function (event) {
         event.preventDefault();
 
         var id = $(this).data("id");
