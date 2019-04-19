@@ -13,11 +13,11 @@
                 <ul>
                     {{#each burgers}}
                     {{#unless devoured}}
- 
+
                     <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                    <button type="submit" class="btn btn-success" id="eatbutton" 
-                     data-id="{{this.id}}" data-newDevoured = "{{devour}}">Eat me!</button>
-                    <span class="fa fa-cutlery"></span></button>
+                    <button class="btn btn-success" id="eatbutton" data-id="{{this.id}}"
+                        data-newDevoured="{{this.devoured}}">Eat me!
+                        <span class="fa fa-cutlery"></span></button>
                     <hr>
 
                     {{/unless}}
@@ -45,10 +45,10 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
-                <form action="/" method="POST">
+                <form class="create-form" action="/" method="POST">
                     <div class="form-request">
                         <label for="input">Your Mexican Burger</label>
-                        <textarea type="text" class="form-control" name="input"
+                        <textarea type="text" class="form-control" id="newburger"="input"
                             placeholder="write here the name of your new burger"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>

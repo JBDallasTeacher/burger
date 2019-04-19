@@ -1,27 +1,26 @@
 // Import the ORM to create functions that will interact with the database.
-var orm = require("../config/orm.js");
+var orm = require('../config/orm.js');
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 var burger = {
-    all: function (cb) {
-        orm.all("burgers", function (res) {
-            cb(res);
-        })
-    },
+  all: function(cb) {
+    orm.all('burger', function(res) {
+      cb(res);
+    });
+  },
 
-    //******************** The variables cols and vals are arrays.*********************************//
-    create: function (input, cb) {
-        orm.create("burgers", ["burger_name", "devoured"], [input, false], cb)
-    },
+  //******************** The variables cols and vals are arrays.*********************************//
+  create: function(input, cb) {
+    orm.create('burger', ['burger_name', 'devoured'], [input, false], cb);
+  },
 
-    //********************************************************************************************// 
-    update: function (input, cb) {
-        var condition = "id=" + input;
-        orm.update("burgers", { devoured: true }, condition, cb)
-    },
+  //********************************************************************************************//
+  update: function(input, cb) {
+    var condition = 'id=' + input;
+    orm.update('burger', { devoured: true }, condition, cb);
+  }
 
-    //********************************************************************************************//  
-
+  //********************************************************************************************//
 };
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 
